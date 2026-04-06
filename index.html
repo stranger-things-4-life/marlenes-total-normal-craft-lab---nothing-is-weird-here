@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Das wird DIY-tastisch!</title>
+<style>
+/* Apply to any element */
+.rainbow-bg {
+    background: linear-gradient(
+        270deg,
+        red,
+        orange,
+        yellow,
+        green,
+        blue,
+        indigo,
+        violet,
+        red
+    );
+    background-size: 1400% 1400%; /* Large size for smooth movement */
+    animation: rainbowFlow 12s ease infinite;
+    color: white; /* Optional for contrast */
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Animation for smooth color movement */
+@keyframes rainbowFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+</style>
+</head>
+<body>
+<div class="rainbow-bg" style="font-size: 64px">
+Hallo Juli! Das ist eine scharfe Reispfanne.
+</div>
+<div class="rainbow-bg">
+<img src="170306-scharfe-reispfanne-harissa-r_1280x1280.jpeg"/>
+</div>
+
+</body>
+</html>

@@ -3,7 +3,6 @@
 <head>
    <title>Das wird DIY-tastisch!</title>
 <style>
-/* Apply to any element */
 .rainbow-bg {
     background: linear-gradient(
         270deg,
@@ -24,6 +23,26 @@
     text-align: center;
 }
 
+.rainbow-bg-backwards {
+    background: linear-gradient(
+        90deg,
+        blue,
+        indigo,
+        violet,
+        red,
+        orange,
+        yellow,
+        green,
+	blue
+    );
+    background-size: 700% 700%;
+    animation: rainbowFlow 12s ease infinite;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
 /* Animation for smooth color movement */
 @keyframes rainbowFlow {
     0% { background-position: 0% 50%; }
@@ -36,7 +55,7 @@
 <div class="rainbow-bg" style="font-size: 64px">
 Hallo Juli! Das ist eine scharfe Reispfanne.
 </div>
-<div class="rainbow-bg">
+<div class="rainbow-bg-backwards">
 <img src="170306-scharfe-reispfanne-harissa-r_1280x1280.jpeg"/>
 </div>
 

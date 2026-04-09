@@ -11,21 +11,25 @@
        font-size: x-large;
        padding: 24px;
     }
-   </style>
-</head>
 
- <meta charset="UTF-8">
+      <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Access Granted</title>
-    <style>
+    <title>Gesperrter Bereich</title>
         body, html {
             height: 100%;
             margin: 0;
+            background-color: #050505;
+            font-family: 'Courier New', Courier, monospace;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #050505;
-            font-family: 'Courier New', Courier, monospace;
+        }
+
+        /* Versteckt den eigentlichen Inhalt der Seite */
+        #main-content {
+            display: none;
+            color: white;
+            text-align: center;
         }
 
         .login-container {
@@ -43,7 +47,6 @@
             text-transform: uppercase;
             letter-spacing: 3px;
             margin-bottom: 25px;
-            font-size: 1.2rem;
         }
 
         input[type="password"] {
@@ -51,7 +54,6 @@
             border: 1px solid #db202c;
             color: white;
             padding: 12px;
-            font-size: 16px;
             width: 100%;
             box-sizing: border-box;
             margin-bottom: 20px;
@@ -60,7 +62,6 @@
         }
 
         .stranger-button {
-            display: inline-block;
             background-color: #000;
             color: #db202c;
             border: 2px solid #db202c;
@@ -70,7 +71,6 @@
             cursor: pointer;
             transition: all 0.3s ease;
             width: 100%;
-            text-decoration: none;
         }
 
         .stranger-button:hover {
@@ -78,9 +78,42 @@
             color: white;
             box-shadow: 0 0 20px #db202c;
         }
+
+   </style>
+</head>
+
     </style>
 </head>
 <body>
+
+
+      <div id="login-overlay" class="login-container">
+        <h2>System Locked</h2>
+        <input type="password" id="pw-input" placeholder="Passwort">
+        <button onclick="unlock()" class="stranger-button">Unlock</button>
+    </div>
+
+    <!-- Der geschützte Inhalt -->
+    <div id="main-content">
+        <h1>Willkommen im Upside Down</h1>
+        <p>Hier sind die geheimen Szenen.</p>
+        <a href="https://netflix.com" class="stranger-button" style="text-decoration:none">Zu Netflix</a>
+    </div>
+
+    <script>
+        function unlock() {
+            const pw = document.getElementById("pw-input").value;
+            if (pw === "coke") {
+                document.getElementById("login-overlay").style.display = "none";
+                document.getElementById("main-content").style.display = "block";
+            } else {
+                alert("ACCESS DENIED.");
+            }
+        }
+
+        document.getElementById("pw-input").addEventListener("keyup", function(e) {
+            if (e.key === "Enter") unlock();
+        });
 
     <div class="login-container">
         <h2>Enter Access Code</h2>
@@ -107,11 +140,6 @@
 
    
 <body>
- <div class="login-container">
-     <label for="coke-pw">Zugangscode eingeben:</label>
-     <input type="password" id="coke-pw" name="pw" placeholder="••••••••">
-     <button onclick="checkAccess()" class="stranger-button">Szenen freischalten</button>
- </div>
    
     <h1 style="text-align: center;"> Marlene’s Totally Normal Craft Lab (Nothing Weird Here) </h1>
     <br>

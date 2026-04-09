@@ -14,6 +14,98 @@
    </style>
 </head>
 
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Granted</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #050505;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .login-container {
+            background: #000;
+            padding: 40px;
+            border: 2px solid #db202c;
+            box-shadow: 0 0 30px rgba(219, 32, 44, 0.4);
+            text-align: center;
+            border-radius: 8px;
+            width: 300px;
+        }
+
+        h2 {
+            color: #db202c;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 25px;
+            font-size: 1.2rem;
+        }
+
+        input[type="password"] {
+            background: #111;
+            border: 1px solid #db202c;
+            color: white;
+            padding: 12px;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            outline: none;
+            text-align: center;
+        }
+
+        .stranger-button {
+            display: inline-block;
+            background-color: #000;
+            color: #db202c;
+            border: 2px solid #db202c;
+            padding: 12px 24px;
+            text-transform: uppercase;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            text-decoration: none;
+        }
+
+        .stranger-button:hover {
+            background-color: #db202c;
+            color: white;
+            box-shadow: 0 0 20px #db202c;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Enter Access Code</h2>
+        <input type="password" id="coke-pw" placeholder="••••••••">
+        <button onclick="checkAccess()" class="stranger-button">Unlock Scenes</button>
+    </div>
+
+    <script>
+        function checkAccess() {
+            const pw = document.getElementById("coke-pw").value;
+            if (pw === "coke") {
+                window.location.href = "https://netflix.com";
+            } else {
+                alert("ACCESS DENIED.");
+            }
+        }
+        
+        document.getElementById("coke-pw").addEventListener("keyup", function(event) {
+            if (event.key === "Enter") {
+                checkAccess();
+            }
+        });
+    </script>
+
+   
 <body>
  <div class="login-container">
      <label for="coke-pw">Zugangscode eingeben:</label>
